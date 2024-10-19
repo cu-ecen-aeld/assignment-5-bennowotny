@@ -2,7 +2,7 @@
 
 load_module() {
   module_name=$1
-  # remove first 2 parameters to get the rest of the files specified
+  # remove first parameter to get the rest of the files specified
   shift
   create_device="$*"
   modprobe "$module_name" || exit 1
@@ -16,7 +16,7 @@ load_module() {
 
 unload_module() {
   module_name=$1
-  # remove first 2 parameters to get the rest of the files specified
+  # remove first parameter to get the rest of the files specified
   shift
   rm_device="$*"
   if [ "$rm_device" ]; then
